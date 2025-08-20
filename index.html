@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniGlobe - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+    .site-logo {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+    <h1 class="site-logo text-center mb-6">UniGlobe</h1>
+    <h2 class="text-2xl font-bold text-center mb-6">Login to Continue</h2>
+    
+    <form onsubmit="login(event)" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+      </div>
+      <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold py-2 rounded-lg hover:opacity-90">Login</button>
+    </form>
+
+    <p class="text-sm text-gray-500 mt-4 text-center">Demo login only (no backend)</p>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      // ✅ Demo login logic, replace with backend auth
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
