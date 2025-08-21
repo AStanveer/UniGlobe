@@ -340,11 +340,12 @@
         //   4) Call YANDEXGPT API with a prompt that includes retrieved passages + any SQL results.
         //   5) Return the final answer + sources (and usedSql flag).
         //
-        const res = await fetch('/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text, threadId, ragFilters })
+        const res = await fetch("/api/proxy", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text }) 
         });
+
 
         if (!res.ok) throw new Error('Network response was not ok');
 
